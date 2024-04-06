@@ -92,3 +92,11 @@ class AuthorCreate(CreateView):
     initial = {'date_of_death': '11/06/2020'}  # You can set initial field values with a dictionary
     template_name = 'catalog/author_form.html'  # Define your template
     success_url = reverse_lazy('authors')  # Redirect after successful author creation
+
+
+from django.views.generic import DetailView
+from .models import Author
+
+class AuthorDetailView(DetailView):
+    model = Author
+    template_name = 'catalog/author_detail.html'  # Ensure you have this template
