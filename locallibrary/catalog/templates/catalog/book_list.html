@@ -1,22 +1,20 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>Book List</h1>
-
-    {% if book_list %}
-    <ul>
-
-      {% for book in book_list %}
-      <li>
-        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
-      </li>
-      {% endfor %}
-
-    </ul>
-
-    {% else %}
-      <p>There are no books in the library.</p>
-    {% endif %}       
+<h2>Books</h2>
+<div class="row">
+  {% for book in book_list %}
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <p class="card-text">{{ book.summary|truncatewords:20 }}</p>
+          <a href="{% url 'book-detail' book.id %}" class="btn btn-primary">View details</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
 {% endblock %}
 
 
