@@ -1,0 +1,19 @@
+.sidebar-nav {
+    margin-top: 40px;
+    padding: 3;
+    list-style: none;
+}
+#logout-form {
+    display: inline;
+}
+
+#logout-form button {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: burlywood;
+    color: black;
+}
+
